@@ -1,5 +1,6 @@
-import {getInput, setFailed, setOutput} from "@actions/core";
+import { getInput, setFailed, setOutput } from "@actions/core";
 import { existsSync, readFileSync } from "fs";
+import fetch from "node-fetch";
 
 /**
  * Main entry point.
