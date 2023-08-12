@@ -1,0 +1,30 @@
+name: 'Upload File'
+description: 'Uses HTTP to upload a file.'
+author: 'KingRainbow44'
+
+runs:
+  using: 'node16'
+  main: 'dist/index.js'
+branding:
+  icon: arrow-right-circle
+  color: gray-dark
+
+inputs:
+  url:
+    description: 'The URL to upload to.'
+    required: true
+  file:
+    description: 'The path to the file to upload.'
+    required: true
+  authorization:
+    description: 'The authorization header to use.'
+    required: false
+  method:
+    description: 'The HTTP method to use.'
+    required: false
+    default: 'POST'
+outputs:
+  body:
+    description: 'The request body of the response.'
+  code:
+    description: 'The status code of the response.'
