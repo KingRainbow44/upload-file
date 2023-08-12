@@ -31,9 +31,11 @@ async function main(): Promise<void> {
             body: content
         });
 
-        setOutput("status", response.status.toString());
-        setOutput("body", await response.text());
-        console.log(`Action finished with response ${response.status} and body ${await response.text()}.`);
+        const body = await response.text();
+
+        setOutput("status", response.status);
+        setOutput("body", body);
+        console.log(`Action finished with response ${response.status} and body ${body}.`);
     } catch (error) {
         console.error(error);
         setFailed(error.message);
