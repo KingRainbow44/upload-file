@@ -33,6 +33,7 @@ async function main(): Promise<void> {
 
         setOutput("status", response.status.toString());
         setOutput("body", await response.text());
+        console.log(`Action finished with response ${response.status} and body ${await response.text()}.`);
     } catch (error) {
         console.error(error);
         setFailed(error.message);
